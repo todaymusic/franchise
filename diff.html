@@ -2010,11 +2010,12 @@ body.ct-open .float{opacity:0!important;pointer-events:none!important}
         <div class="rad"><label><input type="radio" name="ex">있음</label><label><input type="radio" name="ex" checked>없음</label></div>
         <div class="two">
           <div><label data-eid="15-상담:13" data-eo="vh47mv">시작 희망 시기</label><select><option>미정</option><option>3개월 이내</option><option>6개월 이내</option><option>1년 이내</option></select></div>
-          <div><label data-eid="15-상담:14" data-eo="mou7v6">알게 된 경로</label><select><option>선택</option><option>공식 홈페이지</option><option>네이버 블로그</option><option>인스타그램</option><option>기사</option><option>지인 추천</option><option>레슨인포</option><option>기타</option></select></div>
         </div>
-        <label data-eid="15-상담:15" data-eo="lyu0w8">오늘은뮤직 수강 경험</label>
+        <label data-eid="15-상담:14" data-eo="lyu0w8">오늘은뮤직 수강 경험</label>
         <div class="rad"><label><input type="radio" name="lx">있음</label><label><input type="radio" name="lx" checked>없음</label></div>
       </details>
+      <label data-eid="15-상담:15" data-eo="14cpw04">오늘은뮤직을 알게 된 경로 (필수)</label>
+      <select id="ctRef"><option value="">(선택)</option><option>공식 홈페이지</option><option>네이버 블로그</option><option>인스타그램</option><option>기사</option><option>뮬</option><option>지인추천</option><option>레슨인포</option><option>오늘은뮤직에서의 수강경험</option><option>기타</option></select>
       <label data-eid="15-상담:16" data-eo="13pglsw">문의하고 싶은 내용</label>
       <textarea rows="3" placeholder="신규창업, 인수, 리브랜딩 등 궁금한 점을 편하게 적어 주세요"></textarea>
       <label class="agree"><input type="checkbox"> 개인정보 수집 및 이용에 동의합니다 (필수)</label>
@@ -2971,8 +2972,8 @@ if(/[?&]mk=1/.test(location.search)) document.documentElement.classList.add('wy-
     if (!name || !phone) { say(false, '이름과 연락처를 입력해 주세요.'); return; }
     if (!/^[0-9+\-\s()]{8,20}$/.test(phone)) { say(false, '연락처를 숫자로 입력해 주세요.'); return; }
     if (!agree.checked) { say(false, '개인정보 수집 및 이용에 동의해 주세요.'); return; }
-    var area = sels[0].value === '시/도 선택' ? '' : sels[0].value, gu = two[2] ? two[2].value.trim() : '', when = sels[1] ? sels[1].value : '', ref = sels[2] ? sels[2].value : '';
-    if (!ref || ref === '선택') ref = '공식 홈페이지';
+    var area = sels[0].value === '시/도 선택' ? '' : sels[0].value, gu = two[2] ? two[2].value.trim() : '', when = sels[1] && sels[1].id !== 'ctRef' ? sels[1].value : '', ref = document.getElementById('ctRef').value;
+    if (!ref) { say(false, '오늘은뮤직을 알게 된 경로를 선택해 주세요.'); return; }
     var rows = [['희망 지역', (area + ' ' + gu).trim()], ['창업 유형', pick('tp')], ['운영 방식', pick('op')], ['현재 상황', pick('st')], ['운영 경험', pick('ex')], ['시작 시기', when], ['수강 경험', pick('lx')], ['문의', f.querySelector('textarea').value.trim()]];
     var msg = rows.filter(function (r) { return r[1]; }).map(function (r) { return r[0] + ': ' + r[1]; }).join(' / ');
     btn.disabled = true; say(true, '접수 중입니다…');
