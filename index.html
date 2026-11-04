@@ -1880,6 +1880,38 @@ html.tvm-lock{overflow:hidden}
 #lineup .cv-c.albc .pb::after{content:"";margin-left:12%;border-left:calc(var(--w) * .028) solid #1F1B18;border-top:calc(var(--w) * .018) solid transparent;border-bottom:calc(var(--w) * .018) solid transparent}
 #lineup .cv-c.albc .pb.on::after{margin:0;width:calc(var(--w) * .026);height:calc(var(--w) * .034);border:0;border-left:calc(var(--w) * .009) solid #1F1B18;border-right:calc(var(--w) * .009) solid #1F1B18;box-sizing:border-box}
 #lineup .cv-c.albc .ac p{padding-right:24%}
+/* 오플리 테마 1~6월만 크게 (2026-11-04): 3칸×2줄, 사진 왼쪽·월/주제 오른쪽, 주제 글씨 안 잘리게 */
+#lineup .cv-c.th{justify-content:center;padding:5% 6%}
+#lineup .cv-c.th .xh.en{margin:0 0 4.5%}
+#lineup .cv-c.th .thg{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,auto);gap:calc(var(--w) * .03) calc(var(--w) * .026)}
+#lineup .cv-c.th figure{flex-direction:row;align-items:center;gap:calc(var(--w) * .018);min-width:0}
+#lineup .cv-c.th figure i{flex:none;width:42%;border-radius:6px}
+#lineup .cv-c.th figcaption{margin:0;min-width:0;text-align:left;font-size:calc(var(--w) * .026);line-height:1.35;color:#fff;display:block;overflow:visible;word-break:keep-all}
+#lineup .cv-c.th figcaption b{margin-bottom:3px;font-size:calc(var(--w) * .03)}
+/* (11-04 2차) 1~6월 한 줄 6칸: 사진 크게 위, 월·주제 아래 두 줄 */
+#lineup .cv-c.th .thg{grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:auto;gap:calc(var(--w) * .022)}
+#lineup .cv-c.th figure{flex-direction:column;align-items:stretch;gap:0}
+#lineup .cv-c.th figure i{width:100%;border-radius:8px}
+#lineup .cv-c.th figcaption{margin-top:calc(var(--w) * .014);text-align:center;font-size:calc(var(--w) * .021);line-height:1.4}
+#lineup .cv-c.th figcaption b{margin-bottom:2px;font-size:calc(var(--w) * .026)}
+#lineup .cv-c.th{align-items:stretch!important;padding:5% 5%!important}
+#lineup .cv-c.th .thg{width:100%!important;align-self:stretch;gap:calc(var(--w) * .018)!important}
+#lineup .cv-c.th .xh.en{font-size:calc(var(--w) * .052)!important;margin:0 0 5%!important}
+#lineup .cv-c.th figcaption{font-size:max(9.5px,calc(var(--w) * .03))!important;line-height:1.35!important}
+#lineup .cv-c.th figcaption b{font-size:max(11px,calc(var(--w) * .038))!important}
+#lineup .cv-c.th{padding:calc(var(--w) * .05) calc(var(--w) * .055)!important}
+#lineup .cv-c.th .xh.en{margin:0 0 calc(var(--w) * .035)!important}
+@media(max-width:820px){
+  #lineup .cv-c.th{padding:8px 10px!important;justify-content:center}
+  #lineup .cv-c.th .xh.en{font-size:11px!important;margin:0 0 5px!important}
+  #lineup .cv-c.th .thg{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:auto auto!important;gap:5px 6px!important}
+  #lineup .cv-c.th figure i{aspect-ratio:2.6/1;border-radius:4px}
+  #lineup .cv-c.th figcaption{margin-top:2px!important;font-size:8.5px!important;line-height:1.25!important}
+  #lineup .cv-c.th figcaption b{display:inline!important;margin:0 3px 0 0!important;font-size:9px!important}
+}
+@media(max-width:820px){#lineup .cv-c.th figure i{aspect-ratio:3.6/1}#lineup .cv-c.th .thg{gap:4px 6px!important}#lineup .cv-c.th figcaption{font-size:8px!important}}
+@media(max-width:820px){#lineup .cv-c.th{padding:5px 8px!important}#lineup .cv-c.th .xh.en{margin:0 0 3px!important;font-size:10px!important}#lineup .cv-c.th figure i{aspect-ratio:4/1}}
+@media(max-width:820px){#lineup .cv-c.th figure i{aspect-ratio:5/1}}
 
 /* 이유 ④ 자체 마케팅 (2026-10-29): diff 설계 포인트 4. 큰 숫자는 81% 하나, 리뷰 수는 작게 */
 #r-mkt .mk-big{display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);margin-top:clamp(40px,6vh,64px);padding-bottom:clamp(28px,4vh,40px);border-bottom:1px solid rgba(255,255,255,.14)}
@@ -1936,6 +1968,18 @@ html.tvm-lock{overflow:hidden}
 #r-mkt .mk-hl{font-size:clamp(26px,2.4vw,36px)!important}
 #r-mkt .mk-big.mk-side .mk-n{font-size:clamp(44px,4.2vw,64px)!important}
 #r-mkt .mk-hl{font-size:clamp(30px,2.9vw,42px)!important}
+/* 실제 화면 카드 (2026-11-04): 화면 위에 네이버 검색창, 캡처는 확대·잘라내기 없이 폭에 꼭 맞게 */
+#r-mkt .mk-ph{width:78%;top:9%;display:flex;flex-direction:column;container-type:inline-size;border-radius:24px 24px 0 0}
+#r-mkt .mk-ph .nv{flex:none;display:flex;align-items:center;gap:2.6cqw;margin:5cqw 4cqw 3.4cqw;padding:2.6cqw 3.4cqw;border-radius:999px;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.14),0 0 0 1px rgba(0,0,0,.04)}
+#r-mkt .mk-ph .nv i{flex:none;font-style:normal;font-family:Arial,sans-serif;font-weight:900;font-size:6.4cqw;line-height:1;color:#03C75A}
+#r-mkt .mk-ph .nv span{flex:1;min-width:0;font-size:5cqw;font-weight:700;color:#1F1B18;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#r-mkt .mk-ph .nv em{flex:none;width:4.6cqw;height:4.6cqw;border:.9cqw solid #03C75A;border-radius:50%;box-sizing:border-box;position:relative}
+#r-mkt .mk-ph .nv em::after{content:"";position:absolute;right:-1.6cqw;bottom:-1.6cqw;width:.9cqw;height:2.2cqw;background:#03C75A;border-radius:2px;transform:rotate(-45deg)}
+#r-mkt .mk-ph .nt{flex:none;display:flex;gap:4cqw;padding:0 4.4cqw 2.4cqw;border-bottom:1px solid #EEE;font-size:3.9cqw;font-weight:600;color:#666;white-space:nowrap;overflow:hidden}
+#r-mkt .mk-ph .nt b{color:#1F1B18;font-weight:800;position:relative}
+#r-mkt .mk-ph .nt b::after{content:"";position:absolute;left:0;right:0;bottom:-2.4cqw;height:2px;background:#1F1B18}
+#r-mkt .mk-ph .sc{position:relative;left:0;width:100%;flex:none;transform:none}
+#r-mkt .mk-pv{aspect-ratio:4/4.5}
 
 /* 이유 ② 전용 앱 (2026-10-29): diff 설계 포인트 2 + 수강생 앱 */
 #r-app .ap-g{margin-top:clamp(40px,6vh,64px)}
@@ -2642,6 +2686,18 @@ section#mrev.g3{position:relative;overflow:hidden;isolation:isolate}
 #mrev .g3-bg .tip::after{width:40px;height:40px;margin:-20px 0 0 -20px}
 @keyframes g3Bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-6deg)}}
 @media(max-width:820px){#mrev .g3-bg .tip b{font-size:34px}}
+/* (11-04) 연도별 흐름: 첫 달 → 1년 차 → 2년 차, 막대 3개. 이전 _연도별전/ */
+#mrev .n.m b{color:#FFB3A6}
+#mrev .g3-ybars{max-width:760px;margin-left:auto;margin-right:auto;gap:clamp(24px,5vw,72px);height:clamp(90px,11vh,130px)}
+#mrev .g3-ybars i{border-radius:8px 8px 0 0;transition-delay:calc(var(--i)*220ms)}
+#mrev .g3-ybars i:nth-child(2){background:rgba(255,122,102,.45)}
+#mrev .g3-yax{max-width:760px;margin-left:auto;margin-right:auto;justify-content:space-around;font-size:13px;font-weight:600;color:rgba(255,255,255,.55)}
+#mrev .g3-yax span{flex:1;text-align:center}
+@media(max-width:820px){
+  #mrev .g3-yr{display:grid;grid-template-columns:1fr;gap:6px;justify-items:center}
+  #mrev .g3-yr .n{text-align:center}
+  #mrev .g3-yr .arr{transform:rotate(90deg);width:26px;margin:4px 0;align-self:center}
+}
 
 /* 43 유형별 성장 v4 (술속의밤 비교형) */
 section#types.ty4{background:#1F1B18!important;background-image:none!important;color:#fff;padding:clamp(84px,12vh,130px) 0 clamp(64px,9vh,100px)!important;border-top:0!important}
@@ -3624,7 +3680,7 @@ section#rev2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-even
   <div class="fs-in st-in">
     <div class="st-l">
       <p class="st-tag" data-eid="42-이지점:1" data-eo="4l81cw">VALUE &amp; VISION</p>
-      <h2 class="st-hl">오늘은뮤직은<br><em data-eid="42-이지점:2" data-eo="jtsnkp">바로 이 지점</em>에서<br>시작했습니다.</h2>
+      <h2 class="st-hl">오늘은뮤직은<br><em data-eid="42-이지점:2" data-eo="jtnaci">바로 이 공간</em>에서<br>시작했습니다.</h2>
       <p class="st-sub" data-eid="42-이지점:3" data-eo="11ocvtb">나만의 음악을 할 공간, 나에게 꼭 맞는 레슨,<br>나를 보여줄 무대까지. 라이프스타일에 최적화 될 수 있도록 설계했습니다.</p>
       <div class="st-dots" id="stDots" role="tablist" aria-label="카드 넘기기"><button type="button" class="on" aria-label="공간"></button><button type="button" aria-label="퍼스널 레슨"></button><button type="button" aria-label="콘텐츠"></button></div>
       <a class="st-ani" href="vision.html"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>애니메이션 보러가기<span class="ar" aria-hidden="true" data-eid="42-이지점:4" data-eo="3znb">→</span></a>
@@ -3694,13 +3750,13 @@ section#rev2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-even
     </div>
     <p class="rs-sub mk-sub">광고 세팅부터 콘텐츠 기획까지 상위 노출을 만드는 본사의 '자체 마케팅 노하우'가 우리의 진짜 경쟁력입니다.<br class="pc">확실한 초기 유입을 만들어 드리고, 궁극적으로는 점주님이 스스로 마케팅을 주도하고 운영할 수 있도록 <span style="white-space:nowrap" data-eid="37-마케팅:6" data-eo="15y6mhs">모든 시스템을 지원합니다.</span></p>
     <div class="rs-g rs-g4 mk-g">
-      <div class="rs-card"><div class="mk-pv" role="img" aria-label="네이버 플레이스 검색에서 오늘은뮤직이 첫 번째로 나온 실제 화면"><div class="mk-ph"><i class="sc" style="background-image:var(--img-mk-r-place);--w:132%;--x:-16%;--y:-24%"><i class="hl" style="top:44%;height:26%"></i></i></div></div><div class="rs-cb"><b data-eid="37-마케팅:7" data-eo="1lofa4v">검색하면 1위</b><p data-eid="37-마케팅:8" data-eo="z6ufjr">사당·창원·일산보컬학원, 의왕실용음악학원 플레이스 자연 1위 · 평택보컬학원 파워링크 1번째</p></div></div>
-      <div class="rs-card"><div class="mk-pv" role="img" aria-label="네이버 AI 답변에서 오늘은뮤직을 추천한 실제 화면"><div class="mk-ph"><i class="sc" style="background-image:var(--img-mk-r-ai);--w:124%;--x:-12%;--y:-3%"><i class="hl" style="top:35%;height:20%"></i></i></div></div><div class="rs-cb"><b data-eid="37-마케팅:9" data-eo="wifzuu">네이버 AI 첫 추천</b><p data-eid="37-마케팅:10" data-eo="8oe7jg">양재·안산·의왕 실용음악학원 검색 시 네이버 AI 답변에서 먼저 소개</p></div></div>
-      <div class="rs-card"><div class="mk-pv" role="img" aria-label="블로그 후기 검색 상위에 오늘은뮤직 후기가 나온 실제 화면"><div class="mk-ph"><i class="sc" style="background-image:var(--img-mk-r-blog);--w:124%;--x:-12%;--y:-5%"><i class="hl" style="top:11%;height:34%"></i><i class="hl" style="top:46%;height:34%"></i></i></div></div><div class="rs-cb"><b data-eid="37-마케팅:11" data-eo="1gyl1y2">블로그 후기 상위 노출</b><p data-eid="37-마케팅:12" data-eo="k25mwu">야탑 실용음악학원·성수 보컬학원 후기 상위 3개 모두 오늘은뮤직 · 구로 보컬학원 상위 2개</p></div></div>
-      <div class="rs-card"><div class="mk-pv" role="img" aria-label="오늘은뮤직 공식 인스타그램 릴스 썸네일과 조회수"><div class="mk-ph"><span class="mk-rl"><span style="background-image:var(--img-mk-reel1)"><em data-eid="37-마케팅:13" data-eo="f7ailn">▶ 30.3만</em></span><span style="background-image:var(--img-mk-reel2)"><em data-eid="37-마케팅:14" data-eo="f6r9f8">▶ 28.5만</em></span><span style="background-image:var(--img-mk-reel3)"><em data-eid="37-마케팅:15" data-eo="f5zj5b">▶ 15.4만</em></span><span style="background-image:var(--img-mk-reel4)"><em data-eid="37-마케팅:16" data-eo="1dirceh">▶ 11만</em></span></span></div></div><div class="rs-cb"><b data-eid="37-마케팅:17" data-eo="xgsz5x">조회수 터지는 콘텐츠</b><p data-eid="37-마케팅:18" data-eo="v7351r">공식 인스타그램 릴스 조회수 30.3만 · 28.5만 · 15.4만 · 11만</p></div></div>
+      <div class="rs-card"><div class="mk-pv" role="img" aria-label="네이버 플레이스 검색에서 오늘은뮤직이 첫 번째로 나온 실제 화면"><div class="mk-ph"><span class="nv"><i data-eid="37-마케팅:7" data-eo="3t2r">N</i><span data-eid="37-마케팅:8" data-eo="gmgwms">평택보컬학원</span><em></em></span><span class="nt"><span data-eid="37-마케팅:9" data-eo="4kqo3">통합</span><b data-eid="37-마케팅:10" data-eo="1vsqvu9">플레이스</b><span data-eid="37-마케팅:11" data-eo="43muod">블로그</span><span data-eid="37-마케팅:12" data-eo="4k53l">카페</span><span data-eid="37-마케팅:13" data-eo="457ocx">이미지</span></span><i class="sc" style="background-image:var(--img-mk-r-place)"><i class="hl" style="top:45.5%;height:22%"></i></i></div></div><div class="rs-cb"><b data-eid="37-마케팅:14" data-eo="1lofa4v">검색하면 1위</b><p data-eid="37-마케팅:15" data-eo="z6ufjr">사당·창원·일산보컬학원, 의왕실용음악학원 플레이스 자연 1위 · 평택보컬학원 파워링크 1번째</p></div></div>
+      <div class="rs-card"><div class="mk-pv" role="img" aria-label="네이버 AI 답변에서 오늘은뮤직을 추천한 실제 화면"><div class="mk-ph"><span class="nv"><i data-eid="37-마케팅:16" data-eo="3t2r">N</i><span data-eid="37-마케팅:17" data-eo="k7lgdg">안산실용음악학원</span><em></em></span><span class="nt"><b data-eid="37-마케팅:18" data-eo="4kqo3">통합</b><span data-eid="37-마케팅:19" data-eo="1vsqvu9">플레이스</span><span data-eid="37-마케팅:20" data-eo="43muod">블로그</span><span data-eid="37-마케팅:21" data-eo="4k53l">카페</span><span data-eid="37-마케팅:22" data-eo="457ocx">이미지</span></span><i class="sc" style="background-image:var(--img-mk-r-ai)"><i class="hl" style="top:36%;height:18.5%"></i></i></div></div><div class="rs-cb"><b data-eid="37-마케팅:23" data-eo="wifzuu">네이버 AI 첫 추천</b><p data-eid="37-마케팅:24" data-eo="8oe7jg">양재·안산·의왕 실용음악학원 검색 시 네이버 AI 답변에서 먼저 소개</p></div></div>
+      <div class="rs-card"><div class="mk-pv" role="img" aria-label="블로그 후기 검색 상위에 오늘은뮤직 후기가 나온 실제 화면"><div class="mk-ph"><span class="nv"><i data-eid="37-마케팅:25" data-eo="3t2r">N</i><span data-eid="37-마케팅:26" data-eo="11nvnx">야탑 실용음악학원 후기</span><em></em></span><span class="nt"><span data-eid="37-마케팅:27" data-eo="4kqo3">통합</span><span data-eid="37-마케팅:28" data-eo="1vsqvu9">플레이스</span><b data-eid="37-마케팅:29" data-eo="43muod">블로그</b><span data-eid="37-마케팅:30" data-eo="4k53l">카페</span><span data-eid="37-마케팅:31" data-eo="457ocx">이미지</span></span><i class="sc" style="background-image:var(--img-mk-r-blog)"><i class="hl" style="top:9.5%;height:36%"></i><i class="hl" style="top:47.5%;height:34%"></i></i></div></div><div class="rs-cb"><b data-eid="37-마케팅:32" data-eo="1gyl1y2">블로그 후기 상위 노출</b><p data-eid="37-마케팅:33" data-eo="k25mwu">야탑 실용음악학원·성수 보컬학원 후기 상위 3개 모두 오늘은뮤직 · 구로 보컬학원 상위 2개</p></div></div>
+      <div class="rs-card"><div class="mk-pv" role="img" aria-label="오늘은뮤직 공식 인스타그램 릴스 썸네일과 조회수"><div class="mk-ph"><span class="mk-rl"><span style="background-image:var(--img-mk-reel1)"><em data-eid="37-마케팅:34" data-eo="f7ailn">▶ 30.3만</em></span><span style="background-image:var(--img-mk-reel2)"><em data-eid="37-마케팅:35" data-eo="f6r9f8">▶ 28.5만</em></span><span style="background-image:var(--img-mk-reel3)"><em data-eid="37-마케팅:36" data-eo="f5zj5b">▶ 15.4만</em></span><span style="background-image:var(--img-mk-reel4)"><em data-eid="37-마케팅:37" data-eo="1dirceh">▶ 11만</em></span></span></div></div><div class="rs-cb"><b data-eid="37-마케팅:38" data-eo="xgsz5x">조회수 터지는 콘텐츠</b><p data-eid="37-마케팅:39" data-eo="v7351r">공식 인스타그램 릴스 조회수 30.3만 · 28.5만 · 15.4만 · 11만</p></div></div>
     </div>
-    <p class="rs-note" data-eid="37-마케팅:19" data-eo="3l9o81">과거 실적이며 검색 결과는 시점·기기에 따라 달라질 수 있습니다.</p>
-    <a class="rs-more" href="diff.html?mk=1#pt5" data-eid="37-마케팅:20" data-eo="10q7u8o">마케팅 자세히 보기 →</a>
+    <p class="rs-note" data-eid="37-마케팅:40" data-eo="3l9o81">과거 실적이며 검색 결과는 시점·기기에 따라 달라질 수 있습니다.</p>
+    <a class="rs-more" href="diff.html?mk=1#pt5" data-eid="37-마케팅:41" data-eo="10q7u8o">마케팅 자세히 보기 →</a>
   </div>
 </section>
 
@@ -3804,21 +3860,22 @@ section#rev2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-even
 </section>
 
 
-<!-- 30 GROWTH (2026-10-30 v7): 차콜 배경, 전·후 큰 숫자 비교(522 → 2,187, 4.2배) + 아래 얇은 막대 18개. 이전 버전은 _B안전/ -->
+<!-- 30 GROWTH (2026-11-04: 연도별 흐름 첫 달 → 1년 차 → 2년 차, 이전은 _연도별전/) (2026-10-30 v7): 차콜 배경, 전·후 큰 숫자 비교(522 → 2,187, 4.2배) + 아래 얇은 막대 18개. 이전 버전은 _B안전/ -->
 <section id="mrev" class="g3">
   <div class="g3-bg" id="g3Bg" aria-hidden="true"></div>
   <div class="g3-in">
     <p class="g3-tag" data-eid="30-매출그래프:1" data-eo="1dskzq8">GROWTH</p>
     <h2 class="g3-hl">오픈 이후 <em data-eid="30-매출그래프:2" data-eo="177o14w">계속 올라가는 성장세</em></h2>
-    <div class="g3-row">
+    <div class="g3-row g3-yr">
       <div class="n"><span data-eid="30-매출그래프:3" data-eo="psaoa9">오픈 첫 달 평균 매출</span><b>522<small data-eid="30-매출그래프:4" data-eo="4gbxd">만원</small></b></div>
       <i class="arr" aria-hidden="true"><svg viewBox="0 0 48 24"><path d="M2 12h42M34 3l10 9-10 9"/></svg></i>
-      <div class="n r"><span data-eid="30-매출그래프:5" data-eo="1gycy27">18개월 차 평균 매출</span><b>2,187<small data-eid="30-매출그래프:6" data-eo="4gbxd">만원</small></b></div>
-      <div class="cir"><b>4.2<small data-eid="30-매출그래프:7" data-eo="4u6t">배</small></b><span data-eid="30-매출그래프:8" data-eo="1fsgzmq">평균 월 매출</span></div>
+      <div class="n m"><span data-eid="30-매출그래프:5" data-eo="zcqh0i">1년 차</span><b>2천<small data-eid="30-매출그래프:6" data-eo="15yslyi">만원 중반</small></b></div>
+      <i class="arr" aria-hidden="true"><svg viewBox="0 0 48 24"><path d="M2 12h42M34 3l10 9-10 9"/></svg></i>
+      <div class="n r"><span data-eid="30-매출그래프:7" data-eo="zcr8qr">2년 차</span><b>3천<small data-eid="30-매출그래프:8" data-eo="15ytbsx">만원 초반</small></b></div>
     </div>
-    <div class="g3-bars" id="g2Bars" data-v="522,866,745,1051,1271,1264,1298,1487,1518,1630,1597,1782,1908,1720,1952,1818,2028,2187" aria-label="오픈 1개월 차부터 18개월 차까지 평균 월 매출 막대"></div>
-    <div class="g3-ax" aria-hidden="true"><span data-eid="30-매출그래프:9" data-eo="ua7gy6">1개월 차</span><span data-eid="30-매출그래프:10" data-eo="38296z">6개월</span><span data-eid="30-매출그래프:11" data-eo="yk7j94">12개월</span><span data-eid="30-매출그래프:12" data-eo="1q3m16u">18개월 차</span></div>
-    <p class="g3-src" data-eid="30-매출그래프:13" data-eo="uvs51x">오픈한 달 기준으로 맞춘 지점 월 평균 매출 · 월 매출은 결제 합계 · 2026년 8월까지 · 과거 실적이며 결과를 보장하지 않습니다</p>
+    <div class="g3-bars g3-ybars" id="g2Bars" data-v="522,2500,3100" aria-label="오픈 첫 달, 1년 차, 2년 차 평균 월 매출 흐름"></div>
+    <div class="g3-ax g3-yax" aria-hidden="true"><span data-eid="30-매출그래프:9" data-eo="l03xmw">오픈 첫 달</span><span data-eid="30-매출그래프:10" data-eo="zcqh0i">1년 차</span><span data-eid="30-매출그래프:11" data-eo="zcr8qr">2년 차</span></div>
+    <p class="g3-src" data-eid="30-매출그래프:12" data-eo="uvs51x">오픈한 달 기준으로 맞춘 지점 월 평균 매출 · 월 매출은 결제 합계 · 2026년 8월까지 · 과거 실적이며 결과를 보장하지 않습니다</p>
   </div>
 </section>
 
@@ -3838,7 +3895,7 @@ section#rev2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-even
         <div class="bar z"><b>3,776<small data-eid="43-유형별성장:9" data-eo="4gbxd">만원</small></b></div>
         <svg class="arw" viewBox="0 0 300 220" preserveAspectRatio="none" aria-hidden="true"><path class="gl" pathLength="1" d="M28 212 C 120 210, 210 160, 262 52"/><path class="ln" pathLength="1" d="M28 212 C 120 210, 210 160, 262 52"/><path class="hd" d="M244 62 L264 46 L268 72"/></svg>
       </div>
-      <figure class="ph af"><i style="background-image:var(--img-ty-after)"></i><figcaption>오늘은뮤직 최고 월 매출 <b data-eid="43-유형별성장:10" data-eo="1ih7obo">3,776만원</b><span data-eid="43-유형별성장:11" data-eo="1oqkejt">수강생 230명</span></figcaption></figure>
+      <figure class="ph af"><i style="background-image:var(--img-ty-after)"></i><figcaption>오늘은뮤직 G점 최고 월 매출 <b data-eid="43-유형별성장:10" data-eo="1ih7obo">3,776만원</b><span data-eid="43-유형별성장:11" data-eo="1oqkejt">수강생 230명</span></figcaption></figure>
     </div>
     <p class="ty4-more"><span class="tp" data-eid="43-유형별성장:12" data-eo="128g8la">학원 인수</span> 첫 달 <b data-eid="43-유형별성장:13" data-eo="3belcx">547만원</b> → 최고 <b data-eid="43-유형별성장:14" data-eo="1ifnbw6">3,501만원</b> <em data-eid="43-유형별성장:15" data-eo="yjg3v1">6.4배</em> <small data-eid="43-유형별성장:16" data-eo="1ox5cj1">수강생 18명 → 216명</small></p>
     <p class="ty4-src" data-eid="43-유형별성장:17" data-eo="5a9fqh">일부 지점 사례(리브랜딩 구로점 · 학원 인수 안산점) · 월 매출은 결제 합계 · 수강생은 월말 총원 · 첫 달 수치는 오늘은뮤직으로 운영한 첫 달 기준 · 최고치는 2026년 8월까지 · 과거 실적이며 결과를 보장하지 않습니다</p>
@@ -3912,7 +3969,7 @@ section#rev2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-even
     <div class="it-c4">
       <div class="it-cd"><small data-eid="48-인테리어:12" data-eo="1my4zue">01 설계·시공</small><b data-eid="48-인테리어:13" data-eo="xs7ico">인테리어 직접 진행</b><p class="bad" data-eid="48-인테리어:14" data-eo="lmlswt">업체에 통째로 맡기면 중간 마진</p><p class="good">도면·공간 설계는 <em data-eid="48-인테리어:15" data-eo="1m1akxn">본사가 직접</em>, 시공은 제휴업체와 <em data-eid="48-인테리어:16" data-eo="4l75x">함께</em></p></div>
       <div class="it-cd"><small data-eid="48-인테리어:17" data-eo="37trcb">02 물품</small><b data-eid="48-인테리어:18" data-eo="1y8a4wf">자재·가구·소품</b><p class="bad" data-eid="48-인테리어:19" data-eo="fs9m3r">업체가 고르면 단가 확인이 어려움</p><p class="good">물품 하나까지 <em data-eid="48-인테리어:20" data-eo="s7w1vk">본사가 직접 컨택</em></p></div>
-      <div class="it-cd"><small data-eid="48-인테리어:21" data-eo="1fktmq2">03 악기 비용</small><b data-eid="48-인테리어:22" data-eo="osdrxn">악기 구입</b><p class="bad" data-eid="48-인테리어:23" data-eo="1pl51af">소매가로 사면 초기 비용 ↑</p><p class="good">공급가로 <em data-eid="48-인테리어:24" data-eo="qy815v">20~50% 저렴</em>하게</p></div>
+      <div class="it-cd"><small data-eid="48-인테리어:21" data-eo="1fktmq2">03 악기 비용</small><b data-eid="48-인테리어:22" data-eo="osdrxn">악기 구입</b><p class="bad" data-eid="48-인테리어:23" data-eo="1pl51af">소매가로 사면 초기 비용 ↑</p><p class="good">제휴 브랜드에서 할인된 가격으로 <em data-eid="48-인테리어:24" data-eo="19dzzj7">더욱 저렴하게!</em></p></div>
       <div class="it-cd"><small data-eid="48-인테리어:25" data-eo="15nc0cx">04 간판·홍보물</small><b data-eid="48-인테리어:26" data-eo="427ytd">디자인</b><p class="bad" data-eid="48-인테리어:27" data-eo="1agkn66">외주 디자인 비용 따로</p><p class="good">본사가 <em data-eid="48-인테리어:28" data-eo="1f8tvdw">직접 제작</em>해 보내드립니다</p></div>
     </div>
     <div class="it-flow">
@@ -3942,19 +3999,20 @@ section#rev2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-even
       </div>
     </div>
     <div class="cb-tb">
-      <div class="cb-tt"><b data-eid="31-창업비용:15" data-eo="r6qtbz">평형별 예상 창업 비용</b><span data-eid="31-창업비용:16" data-eo="1ebjueh">신규 창업 기준 · VAT 포함</span></div>
+      <div class="cb-tt"><b data-eid="31-창업비용:15" data-eo="r6qtbz">평형별 예상 창업 비용</b><span data-eid="31-창업비용:16" data-eo="xts1zu">신규 창업 기준 · VAT 포함 · 냉난방비 별도</span></div>
       <div class="cb-sc"><table>
-        <thead><tr><th data-eid="31-창업비용:17" data-eo="4l4cj">평형</th><th data-eid="31-창업비용:18" data-eo="42op6h">레슨실</th><th data-eid="31-창업비용:19" data-eo="120kgko">악기·가구·간판</th><th data-eid="31-창업비용:20" data-eo="1tuhyy1">인테리어</th><th data-eid="31-창업비용:21" data-eo="4l6s2">합계</th><th data-eid="31-창업비용:22" data-eo="4kxev">평당</th></tr></thead>
+        <thead><tr><th data-eid="31-창업비용:17" data-eo="4l4cj">평형</th><th data-eid="31-창업비용:18" data-eo="42op6h">레슨실</th><th data-eid="31-창업비용:19" data-eo="120kgko">악기·가구·간판</th><th data-eid="31-창업비용:20" data-eo="r7y41m">인테리어 시공</th><th data-eid="31-창업비용:21" data-eo="4l6s2">합계</th></tr></thead>
         <tbody>
-          <tr><td data-eid="31-창업비용:23" data-eo="3774k1">30평</td><td class="m" data-eid="31-창업비용:24" data-eo="376v1e">10개</td><td class="m" data-eid="31-창업비용:25" data-eo="14dl5u9">약 2,500만원</td><td class="m" data-eid="31-창업비용:26" data-eo="1btpjbs">약 9,500만원</td><td class="s" data-eid="31-창업비용:27" data-eo="51xyk2">약 1억 2,000만원</td><td class="p" data-eid="31-창업비용:28" data-eo="xmqauq">약 400만원</td></tr>
-          <tr><td data-eid="31-창업비용:29" data-eo="3775ea">40평</td><td class="m" data-eid="31-창업비용:30" data-eo="376v5z">15개</td><td class="m" data-eid="31-창업비용:31" data-eo="14fpf10">약 2,800만원</td><td class="m" data-eid="31-창업비용:32" data-eo="s0bzo9">약 1억 500만원</td><td class="s" data-eid="31-창업비용:33" data-eo="qgyut2">약 1억 3,300만원</td><td class="p" data-eid="31-창업비용:34" data-eo="xm38nq">약 332만원</td></tr>
-          <tr><td data-eid="31-창업비용:35" data-eo="37768j">50평</td><td class="m" data-eid="31-창업비용:36" data-eo="376v8q">18개</td><td class="m" data-eid="31-창업비용:37" data-eo="1pmypl9">약 3,000만원</td><td class="m" data-eid="31-창업비용:38" data-eo="1itogs6">약 1억 1,500만원</td><td class="s" data-eid="31-창업비용:39" data-eo="1bvabzt">약 1억 4,500만원</td><td class="p" data-eid="31-창업비용:40" data-eo="xlieah">약 290만원</td></tr>
-          <tr><td data-eid="31-창업비용:41" data-eo="37772s">60평</td><td class="m" data-eid="31-창업비용:42" data-eo="376vvn">20개</td><td class="m" data-eid="31-창업비용:43" data-eo="1podjpr">약 3,200만원</td><td class="m" data-eid="31-창업비용:44" data-eo="51xyk2">약 1억 2,000만원</td><td class="s" data-eid="31-창업비용:45" data-eo="1x62pvb">약 1억 5,200만원</td><td class="p" data-eid="31-창업비용:46" data-eo="xlfdw8">약 253만원</td></tr>
-          <tr><td data-eid="31-창업비용:47" data-eo="3777x1">70평</td><td class="m" data-eid="31-창업비용:48" data-eo="376vvn">20개</td><td class="m" data-eid="31-창업비용:49" data-eo="1pqhswi">약 3,500만원</td><td class="m" data-eid="31-창업비용:50" data-eo="qeulmb">약 1억 3,000만원</td><td class="s" data-eid="31-창업비용:51" data-eo="jjzk57">약 1억 6,500만원</td><td class="p" data-eid="31-창업비용:52" data-eo="xldwyh">약 236만원</td></tr>
-          <tr><td data-eid="31-창업비용:53" data-eo="3778ra">80평</td><td class="m" data-eid="31-창업비용:54" data-eo="376w08">25개</td><td class="m" data-eid="31-창업비용:55" data-eo="1pqhswi">약 3,500만원</td><td class="m" data-eid="31-창업비용:56" data-eo="1x4nvqt">약 1억 5,000만원</td><td class="s" data-eid="31-창업비용:57" data-eo="1q9su9p">약 1억 8,500만원</td><td class="p" data-eid="31-창업비용:58" data-eo="xldsr8">약 231만원</td></tr>
+          <tr><td data-eid="31-창업비용:22" data-eo="3773ps">20평</td><td class="m" data-eid="31-창업비용:23" data-eo="3ikyh">8개</td><td class="m" data-eid="31-창업비용:24" data-eo="x0mesx">2,200만원</td><td class="m" data-eid="31-창업비용:25" data-eo="1bhylbt">6,600만원</td><td class="s" data-eid="31-창업비용:26" data-eo="j82nlp">8,800만원</td></tr>
+          <tr><td data-eid="31-창업비용:27" data-eo="3774k1">30평</td><td class="m" data-eid="31-창업비용:28" data-eo="376v1e">10개</td><td class="m" data-eid="31-창업비용:29" data-eo="x2qnzo">2,500만원</td><td class="m" data-eid="31-창업비용:30" data-eo="1wqmq0k">7,000만원</td><td class="s" data-eid="31-창업비용:31" data-eo="14iv1h7">9,500만원</td></tr>
+          <tr><td data-eid="31-창업비용:32" data-eo="3775ea">40평</td><td class="m" data-eid="31-창업비용:33" data-eo="376v45">13개</td><td class="m" data-eid="31-창업비용:34" data-eo="x4ux6f">2,800만원</td><td class="m" data-eid="31-창업비용:35" data-eo="1wuv8e2">7,600만원</td><td class="s" data-eid="31-창업비용:36" data-eo="50di3">1억 400만원</td></tr>
+          <tr><td data-eid="31-창업비용:37" data-eo="37768j">50평</td><td class="m" data-eid="31-창업비용:38" data-eo="376v6w">16개</td><td class="m" data-eid="31-창업비용:39" data-eo="1ic47qo">3,000만원</td><td class="m" data-eid="31-창업비용:40" data-eo="j6nth7">8,600만원</td><td class="s" data-eid="31-창업비용:41" data-eo="1jw09tm">1억 1,600만원</td></tr>
+          <tr><td data-eid="31-창업비용:42" data-eo="37772s">60평</td><td class="m" data-eid="31-창업비용:43" data-eo="376vvn">20개</td><td class="m" data-eid="31-창업비용:44" data-eo="1idj1v6">3,200만원</td><td class="m" data-eid="31-창업비용:45" data-eo="14gqsag">9,200만원</td><td class="s" data-eid="31-창업비용:46" data-eo="66e0s9">1억 2,400만원</td></tr>
+          <tr><td data-eid="31-창업비용:47" data-eo="3777x1">70평</td><td class="m" data-eid="31-창업비용:48" data-eo="376vzb">24개</td><td class="m" data-eid="31-창업비용:49" data-eo="1ifnb1x">3,500만원</td><td class="m" data-eid="31-창업비용:50" data-eo="386ruj">1억원</td><td class="s" data-eid="31-창업비용:51" data-eo="rk02wr">1억 3,500만원</td></tr>
+          <tr><td data-eid="31-창업비용:52" data-eo="3778ra">80평</td><td class="m" data-eid="31-창업비용:53" data-eo="376w2z">28개</td><td class="m" data-eid="31-창업비용:54" data-eo="4nwstt">4,000만원</td><td class="m" data-eid="31-창업비용:55" data-eo="1jrrrg4">1억 1,000만원</td><td class="s" data-eid="31-창업비용:56" data-eo="1y6a9q0">1억 5,000만원</td></tr>
         </tbody>
       </table></div>
-      <p class="cb-nt" data-eid="31-창업비용:59" data-eo="1t8q5ju">대략적인 추정 비용이며 건물·평수·창업 유형에 따라 달라집니다. 임차 비용은 별도이며, 정확한 견적은 상담에서 안내해 드립니다.</p>
+      <p class="cb-nt" data-eid="31-창업비용:57" data-eo="181cf8c">대략적인 추정 비용이며 건물·평수·창업 유형에 따라 달라집니다. 임차 비용과 냉난방비는 별도이며, 정확한 견적은 상담에서 안내해 드립니다.</p>
     </div>
   </div>
 </section>
@@ -5311,7 +5369,7 @@ window.__hv=function(r){if(window.innerWidth<=820) return r;if(r<.6) return r;if
       v.addEventListener('loadedmetadata', function () { try { this.currentTime = Math.min(3, this.duration / 4); } catch (e) {} });
       c.appendChild(v); c.dataset.play = 1;
     }
-    if (kind === 'themes') { c.classList.add('th'); c.style.backgroundImage = 'none'; c.innerHTML = '<p class="xh en">O&#39;ply Theme</p><div class="thg">' + TH.map(function (t, i) { var n = (i < 9 ? '0' : '') + (i + 1); return '<figure><i style="background-image:var(--img-lc-ply' + n + ')"></i><figcaption><b>' + (i + 1) + '월</b>' + t + '</figcaption></figure>'; }).join('') + '</div>'; }
+    if (kind === 'themes') { c.classList.add('th'); c.style.backgroundImage = 'none'; c.innerHTML = '<p class="xh en">O&#39;ply Theme</p><div class="thg">' + TH.slice(0, 6).map(function (t, i) { var n = (i < 9 ? '0' : '') + (i + 1); return '<figure><i style="background-image:var(--img-lc-ply' + n + ')"></i><figcaption><b>' + (i + 1) + '월</b>' + t + '</figcaption></figure>'; }).join('') + '</div>'; }
     if (kind === 'chips') { c.classList.add('chp'); c.style.backgroundImage = 'none'; c.innerHTML = '<p class="xh en">O&#39;salon Program</p><div class="slg">' + PG.map(function (t) { return '<figure><i style="background-image:var(--img-lc-sl-' + t[0] + ')"></i><figcaption>' + t[1] + '</figcaption></figure>'; }).join('') + '</div>'; }
     if (kind === 'albums') { c.classList.add('alb'); c.style.backgroundImage = 'none'; c.innerHTML = '<p class="xh">수강생이 발매한 음원</p><div class="als">' + AL.map(function (a) { return '<figure><i style="background-image:var(--img-' + a[0] + ')"></i><figcaption><b>' + a[1] + '</b>' + a[2] + '</figcaption></figure>'; }).join('') + '</div>'; }
     if (s.dataset.pos) c.style.backgroundPosition = s.dataset.pos;
@@ -5501,7 +5559,7 @@ new IntersectionObserver(function(es,o){if(es[0].isIntersecting){p.classList.add
 /* 30 GROWTH v7: 막대는 보이면 왼쪽부터 자람 */
 (function(){var s=document.getElementById('mrev');if(!s) return;
   var b=document.getElementById('g2Bars'),v=b.dataset.v.split(',').map(Number),M=Math.max.apply(null,v),grown=false;
-  b.innerHTML=v.map(function(x,i){return '<i'+(i===v.length-1?' class="l"':'')+' style="--i:'+i+'" data-h="'+(x/M*100).toFixed(1)+'" title="'+(i+1)+'개월 차 '+x.toLocaleString()+'만원"></i>'}).join('');
+  b.innerHTML=v.map(function(x,i){return '<i'+(i===v.length-1?' class="l"':'')+' style="--i:'+i+'" data-h="'+(x/M*100).toFixed(1)+'" title=""></i>'}).join('');
   function grow(){if(grown) return;grown=true;[].forEach.call(b.children,function(i){i.style.height=i.dataset.h+'%'})}
   if('IntersectionObserver' in window) new IntersectionObserver(function(es){if(es[0].isIntersecting) grow()},{threshold:.25}).observe(s);else grow();
   addEventListener('scroll',function(){if(grown) return;var r=b.getBoundingClientRect();if(r.top<innerHeight*.9) grow()},{passive:true});
