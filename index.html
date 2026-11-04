@@ -2699,6 +2699,28 @@ section#mrev.g3{position:relative;overflow:hidden;isolation:isolate}
   #mrev .g3-yr .n{text-align:center}
   #mrev .g3-yr .arr{transform:rotate(90deg);width:26px;margin:4px 0;align-self:center}
 }
+/* (11-04) C안: 점 3개 타임라인 + 큰 글씨, 막대는 꾸밈용으로 낮고 연하게. 이전 _타임라인전/ */
+#mrev .g3-tl{position:relative;display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(44px,6vh,64px);padding-top:40px}
+#mrev .g3-tl::before{content:"";position:absolute;left:16.66%;right:16.66%;top:8px;height:2px;background:linear-gradient(90deg,rgba(255,255,255,.35),#FF7A66)}
+#mrev .g3-tl .n{position:relative;text-align:center}
+#mrev .g3-tl .n::before{content:"";position:absolute;left:50%;top:-40px;margin-left:-9px;width:18px;height:18px;border-radius:50%;box-sizing:border-box;background:#1F1B18;border:3px solid #FF7A66}
+#mrev .g3-tl .n span{font-size:clamp(17px,1.4vw,21px);font-weight:700;color:#fff;text-shadow:0 1px 14px #1F1B18,0 0 4px #1F1B18}
+#mrev .g3-tl .n b{margin-top:12px;font-size:clamp(64px,6.4vw,100px);text-shadow:0 2px 24px #1F1B18,0 0 8px #1F1B18}
+#mrev .g3-tl .n b small{font-size:clamp(19px,1.6vw,24px);color:#fff}
+#mrev .g3-deco{height:clamp(36px,5vh,56px);gap:clamp(3px,.4vw,6px);margin-top:clamp(36px,5vh,52px);opacity:.55}
+#mrev .g3-deco i,#mrev .g3-deco i.l{background:rgba(255,255,255,.1)}
+#mrev .g3-src{color:rgba(255,255,255,.55)}
+@media(max-width:820px){
+  #mrev .g3-tl{grid-template-columns:1fr;gap:30px;padding:0 0 0 34px;margin-top:36px}
+  #mrev .g3-tl::before{left:8px;right:auto;top:12px;bottom:40px;width:2px;height:auto;background:linear-gradient(180deg,rgba(255,255,255,.35),#FF7A66)}
+  #mrev .g3-tl .n{text-align:left}
+  #mrev .g3-tl .n::before{left:-34px;top:3px;margin-left:0}
+  #mrev .g3-tl .n span{font-size:17px}
+  #mrev .g3-tl .n b{margin-top:8px;font-size:56px}
+  #mrev .g3-tl .n b small{font-size:19px}
+}
+#mrev.dn .g3-bg .glow,#mrev.dn .g3-bg .line{stroke-dasharray:none}
+@media(max-width:820px){#mrev .g3-tl::before{bottom:80px}}
 
 /* 43 유형별 성장 v4 (술속의밤 비교형) */
 section#types.ty4{background:#1F1B18!important;background-image:none!important;color:#fff;padding:clamp(84px,12vh,130px) 0 clamp(64px,9vh,100px)!important;border-top:0!important}
@@ -3867,16 +3889,13 @@ section#rev2::after{content:"";position:absolute;inset:0;z-index:-1;pointer-even
   <div class="g3-in">
     <p class="g3-tag" data-eid="30-매출그래프:1" data-eo="1dskzq8">GROWTH</p>
     <h2 class="g3-hl">오픈 이후 <em data-eid="30-매출그래프:2" data-eo="177o14w">계속 올라가는 성장세</em></h2>
-    <div class="g3-row g3-yr">
+    <div class="g3-tl">
       <div class="n"><span data-eid="30-매출그래프:3" data-eo="psaoa9">오픈 첫 달 평균 매출</span><b>522<small data-eid="30-매출그래프:4" data-eo="4gbxd">만원</small></b></div>
-      <i class="arr" aria-hidden="true"><svg viewBox="0 0 48 24"><path d="M2 12h42M34 3l10 9-10 9"/></svg></i>
       <div class="n m"><span data-eid="30-매출그래프:5" data-eo="zcqh0i">1년 차</span><b>2천<small data-eid="30-매출그래프:6" data-eo="15yslyi">만원 중반</small></b></div>
-      <i class="arr" aria-hidden="true"><svg viewBox="0 0 48 24"><path d="M2 12h42M34 3l10 9-10 9"/></svg></i>
       <div class="n r"><span data-eid="30-매출그래프:7" data-eo="zcr8qr">2년 차</span><b>3천<small data-eid="30-매출그래프:8" data-eo="15ytbsx">만원 초반</small></b></div>
     </div>
-    <div class="g3-bars g3-ybars" id="g2Bars" data-v="522,2500,3100" aria-label="오픈 첫 달, 1년 차, 2년 차 평균 월 매출 흐름"></div>
-    <div class="g3-ax g3-yax" aria-hidden="true"><span data-eid="30-매출그래프:9" data-eo="l03xmw">오픈 첫 달</span><span data-eid="30-매출그래프:10" data-eo="zcqh0i">1년 차</span><span data-eid="30-매출그래프:11" data-eo="zcr8qr">2년 차</span></div>
-    <p class="g3-src" data-eid="30-매출그래프:12" data-eo="uvs51x">오픈한 달 기준으로 맞춘 지점 월 평균 매출 · 월 매출은 결제 합계 · 2026년 8월까지 · 과거 실적이며 결과를 보장하지 않습니다</p>
+    <div class="g3-bars g3-deco" id="g2Bars" data-v="522,818,1094,1349,1583,1794,1982,2146,2283,2391,2466,2500,2550,2600,2650,2700,2750,2800,2850,2900,2950,3000,3050,3100" aria-hidden="true"></div>
+    <p class="g3-src" data-eid="30-매출그래프:9" data-eo="uvs51x">오픈한 달 기준으로 맞춘 지점 월 평균 매출 · 월 매출은 결제 합계 · 2026년 8월까지 · 과거 실적이며 결과를 보장하지 않습니다</p>
   </div>
 </section>
 
@@ -5568,7 +5587,7 @@ new IntersectionObserver(function(es,o){if(es[0].isIntersecting){p.classList.add
 /* 뒷배경 빛 곡선: 막대와 같은 숫자로 부드러운 곡선을 그려, 화면에 들어오면 왼쪽 아래부터 그려짐 */
 (function(){var s=document.getElementById('mrev'),bg=document.getElementById('g3Bg'),b=document.getElementById('g2Bars');if(!s||!bg||!b) return;
   var v=b.dataset.v.split(',').map(Number),M=Math.max.apply(null,v),m=Math.min.apply(null,v),W=1000,H=600,x0=-20,x1=930,y0=560,y1=90;
-  var P=v.map(function(x,i){return [x0+(x1-x0)*i/(v.length-1), y0-(y0-y1)*(x-m)/(M-m)]});
+  var P=v.map(function(x,i){return [x0+(x1-x0)*i/(v.length-1), y0-(y0-y1)*Math.pow((x-m)/(M-m),2.4)]});
   /* 들쭉날쭉한 달은 살짝 평평하게 (흐름만 보이게) */
   P=P.map(function(p,i){if(i===0||i===P.length-1) return p;return [p[0],(P[i-1][1]+p[1]*2+P[i+1][1])/4]});
   var d='M'+P[0][0]+','+P[0][1];
@@ -5576,7 +5595,7 @@ new IntersectionObserver(function(es,o){if(es[0].isIntersecting){p.classList.add
     d+='C'+(p[0]+(q[0]-a[0])/6).toFixed(1)+','+(p[1]+(q[1]-a[1])/6).toFixed(1)+' '+(q[0]-(r[0]-p[0])/6).toFixed(1)+','+(q[1]-(r[1]-p[1])/6).toFixed(1)+' '+q[0].toFixed(1)+','+q[1].toFixed(1)}
   var g='';for(var k=1;k<6;k++) g+='<line x1="0" x2="'+W+'" y1="'+(H*k/6)+'" y2="'+(H*k/6)+'"/>';
   bg.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none"><defs><linearGradient id="g3Line" x1="0" x2="1"><stop offset="0" stop-color="#FF7A66" stop-opacity=".15"/><stop offset=".6" stop-color="#FF7A66" stop-opacity=".8"/><stop offset="1" stop-color="#FFD2C9"/></linearGradient><linearGradient id="g3Fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FF7A66" stop-opacity=".16"/><stop offset="1" stop-color="#FF7A66" stop-opacity="0"/></linearGradient></defs><g class="grid">'+g+'</g><path class="area" d="'+d+'L'+P[P.length-1][0]+','+H+' L'+P[0][0]+','+H+'Z"/><path class="glow" pathLength="1" vector-effect="non-scaling-stroke" d="'+d+'"/><path class="line" pathLength="1" vector-effect="non-scaling-stroke" d="'+d+'"/></svg><i class="tip" style="left:'+(P[P.length-1][0]/W*100)+'%;top:'+(P[P.length-1][1]/H*100)+'%"><b>♪</b></i>';
-  function on(){s.classList.add('on')}
+  function on(){s.classList.add('on');setTimeout(function(){s.classList.add('dn')},2700)}
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){on();io.disconnect()}},{threshold:.3});io.observe(s)}else on();
   addEventListener('scroll',function(){if(s.classList.contains('on')) return;var r=s.getBoundingClientRect();if(r.top<innerHeight*.6&&r.bottom>0) on()},{passive:true});
 })();
