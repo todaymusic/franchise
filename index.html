@@ -2295,6 +2295,9 @@ html.tvm-lock{overflow:hidden}
 #why .wy-opfr.on{opacity:1}
 #why :is(#pt3,#pt4) .ap-mon .wy-opstage{max-width:none;margin-left:0;margin-right:0}
 
+/* (11-06) 모니터를 키우면 아래 섹션(NETWORK)이 모니터 아랫부분을 덮던 문제: 확대 중엔 이 섹션을 위로 */
+#r-app{transition:z-index 0s linear .55s}#r-app:is(.ap-zm,:has(.ap-lap.zm,.wy-psw.big)){z-index:5;transition-delay:0s}   /* 모니터·휴대폰 확대 중(작아지는 0.5초 포함) 아래 섹션보다 위에 */
+
 /* 45 지점 네트워크 */
 #network .nw-in{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
 #network .nw-hl{font-size:clamp(30px,2.9vw,42px)}
