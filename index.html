@@ -3536,6 +3536,16 @@ body.ct-open .float{opacity:0!important;pointer-events:none!important}
   #menuBtn{top:5px!important;right:10px!important;width:44px;height:44px}
 }
 
+/* (11-06) 로고 옆 "‹ 홈으로" — 오늘은뮤직 홈페이지(todaymusicgood.com)로 돌아가기 */
+.gnb-home{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;margin-left:-6px;padding:6px 12px 6px 14px;border-left:1px solid rgba(127,127,127,.35);font-size:13.5px;font-weight:600;color:inherit;opacity:.6;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.gnb-home:hover{opacity:1}
+.gnb-home svg{width:14px;height:14px;transition:transform .2s}
+.gnb-home:hover svg{transform:translateX(-3px)}
+@media(max-width:860px){
+  .gnb-home{margin:0 0 0 12px;padding:7px 11px;border:0;border-radius:999px;background:rgba(31,27,24,.06);font-size:13px;opacity:.85}
+  .gnb.dark .gnb-home{background:rgba(255,255,255,.12)}
+}
+
 /* 40 베이스 스타일 맞추기 (2026-10-29): 새로 추가한 섹션 겉모습을 소개 구간(히어로 다음 아이보리 화면)과 같은 디자인으로.
    내용·순서·숫자는 그대로. 소개·창업 유형·가맹 절차는 기준이라 건드리지 않음 (가맹 절차 혜택 카드만 예외)
    - 바탕: 아이보리 + 소개와 같은 분홍·살구 번짐(섹션마다 위치를 바꿈)
@@ -4954,6 +4964,7 @@ document.getElementById('rows').innerHTML=h;
 <!-- 39 상단 가로 메뉴 (2026-10-29): 메인에만. 지금 보고 있는 구간 강조, 지나가는 섹션 배경에 따라 글씨색 자동 -->
 <nav class="gnb" id="gnb" aria-label="메인 메뉴">
   <a class="gnb-logo" href="#hero" aria-label="오늘은뮤직 처음으로"></a>
+  <a class="gnb-home" href="https://todaymusicgood.com/"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>홈으로</a>   <!-- (11-06) 오늘은뮤직 홈페이지로 돌아가기 -->
   <div class="gnb-list" id="gnbList">
     <a href="#hero" data-g="hero" data-eid="39-상단메뉴:1" data-eo="1kqynpq">오늘은뮤직 소개</a>
     <a href="#facts" data-g="facts,start" data-eid="39-상단메뉴:2" data-eo="5an307">사업 전망</a>
